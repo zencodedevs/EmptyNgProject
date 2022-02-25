@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Hr": {
+    "Workspace": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Hr",
+            "outputPath": "dist/Workspace",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,24 +115,24 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Hr:build"
+            "browserTarget": "Workspace:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Hr:build:production"
+              "browserTarget": "Workspace:build:production"
             },
             "dev": {
-              "browserTarget": "Hr:build:dev"
+              "browserTarget": "Workspace:build:dev"
             },
             "qa": {
-              "browserTarget": "Hr:build:qa"
+              "browserTarget": "Workspace:build:qa"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Hr:build"
+            "browserTarget": "Workspace:build"
           }
         },
         "test": {
@@ -169,22 +169,22 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Hr:serve"
+            "devServerTarget": "Workspace:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Hr:serve:production"
+              "devServerTarget": "Workspace:serve:production"
             },
             "dev": {
-              "devServerTarget": "Hr:serve:dev"
+              "devServerTarget": "Workspace:serve:dev"
             },
             "qa": {
-              "devServerTarget": "Hr:serve:qa"
+              "devServerTarget": "Workspace:serve:qa"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Hr"
+  "defaultProject": "Workspace"
 }

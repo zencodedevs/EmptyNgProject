@@ -12,7 +12,7 @@ export class AppComponent {
 
   private language: string = CONFIGURATION.get<string>("constants.language") || KA_GE;
 
-  title = 'Hr';
+  title = 'Workspace';
 
   constructor(private translateService: TranslateService) {
     this.translateService.use(this.language);
