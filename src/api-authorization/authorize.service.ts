@@ -187,6 +187,7 @@ export class AuthorizeService {
 
     settings.automaticSilentRenew = true;
     settings.includeIdTokenInSilentRenew = true;
+    debugger
     this.userManager = new UserManager(settings);
 
     this.userManager.events.addUserSignedOut(async () => {
