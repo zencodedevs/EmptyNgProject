@@ -9,6 +9,9 @@ const options = {
 };
 try {
     let changeFiles = replaceFile.sync(options);
+
+    console.log("changeFiles",changeFiles);
+    
     if (changeFiles == 0) {
         throw "Please make sure file have version";
     }

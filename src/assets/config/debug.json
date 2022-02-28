@@ -1,9 +1,10 @@
 {
-    "api_base_url": "https://localhost:5001",
-    "constants": {
-        "copyright": "zencode",
-        "language": "ka-ge",
-        "tagItemCount": 10
-    },
-    "silentApiKeys": []
+  "api_base_configuration_url":"https://localhost:5001",
+  "api_base_url": "https://localhost:5001",
+  "constants": {
+      "copyright": "zencode",
+      "language": "ka-ge",
+      "tagItemCount": 10
+  },
+  "silentApiKeys": []
 }

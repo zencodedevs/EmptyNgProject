@@ -1,5 +1,5 @@
 export const environment = {
-    version: '0.0.0',
-    production: true,
-    name: 'qa',
+  version: '0.0.0',
+  production: true,
+  name: 'qa',
 };

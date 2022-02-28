@@ -19,6 +19,7 @@ console.log('Change by buildVersion: ', buildVersion);
 
 try {
     fs.readdir(__dirname + buildPath, (err, files) => {
+        console.log('readdir');
         files.forEach(file => {
 
             if (file.match(/^(es2015-polyfills|main|polyfills|runtime|scripts|styles)\.[a-z0-9]+\.(js|css)$/)) { // regex is identified by build files generated
