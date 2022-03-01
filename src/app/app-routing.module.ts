@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'token', component: TokenComponent, canActivate: [AuthorizeGuard, DevEnvGuard] },
-  { path: '**', pathMatch: 'full', redirectTo: 'welcome' },
+  // { path: '**', pathMatch: 'full', redirectTo: 'welcome' },
 ];
 
 @NgModule({

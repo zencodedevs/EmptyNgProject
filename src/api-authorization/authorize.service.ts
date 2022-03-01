@@ -111,6 +111,7 @@ export class AuthorizeService {
   public async completeSignIn(url: string): Promise<IAuthenticationResult> {
     try {
       await this.ensureUserManagerInitialized();
+
       const user: any = await this.userManager.signinCallback(url);
       this.userSubject.next(user && user.profile);
       return this.success(user && user.state);
@@ -171,23 +172,23 @@ export class AuthorizeService {
   }
 
   private async ensureUserManagerInitialized(): Promise<void> {
+
     if (this.userManager !== undefined) {
       return;
     }
 
-    const configurationUrl = CONFIGURATION.get<string>('api_base_configuration_url');
+    const configurationUrl = CONFIGURATION.get<string>('client_configuration_url');
 
     const response = await fetch(`${configurationUrl}${ApplicationPaths.ApiAuthorizationClientConfigurationUrl}`);
 
     if (!response.ok) {
       throw new Error(`Could not load settings for '${ApplicationName}'`);
     }
- 
-    const settings: any = await response.json();
 
+    const settings: any = await response.json();
     settings.automaticSilentRenew = true;
     settings.includeIdTokenInSilentRenew = true;
-    debugger
+
     this.userManager = new UserManager(settings);
 
     this.userManager.events.addUserSignedOut(async () => {

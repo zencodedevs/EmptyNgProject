@@ -1,3 +1,5 @@
+import { CONFIGURATION } from "zencode-configuration-manager";
+
 export const ApplicationName = 'ZenAchitecture.WebUI';
 
 export const ReturnUrlType = 'returnUrl';
@@ -40,8 +42,8 @@ let applicationPaths: ApplicationPathsType = {
   LogOutPathComponents: [],
   LoggedOutPathComponents: [],
   LogOutCallbackPathComponents: [],
-  IdentityRegisterPath: '/Identity/Account/Register',
-  IdentityManagePath: '/Identity/Account/Manage'
+  IdentityRegisterPath: `/Identity/Account/Register`,
+  IdentityManagePath: `/Identity/Account/Manage`
 };
 
 applicationPaths = {

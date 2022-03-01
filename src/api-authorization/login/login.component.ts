@@ -3,6 +3,7 @@ import { AuthorizeService, AuthenticationResultStatus } from '../authorize.servi
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { LoginActions, QueryParameterNames, ApplicationPaths, ReturnUrlType } from '../api-authorization.constants';
+import { CONFIGURATION } from 'zencode-configuration-manager';
 
 // The main responsibility of this component is to handle the user's login process.
 // This is the starting point for the login process. Any component that needs to authenticate
@@ -84,11 +85,11 @@ export class LoginComponent implements OnInit {
 
   private redirectToRegister(): any {
     this.redirectToApiAuthorizationPath(
-      `${ApplicationPaths.IdentityRegisterPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
+      `${CONFIGURATION.get<string>('client_configuration_url')}${ApplicationPaths.IdentityRegisterPath}?returnUrl=${encodeURI('/' + ApplicationPaths.Login)}`);
   }
 
   private redirectToProfile(): void {
-    this.redirectToApiAuthorizationPath(ApplicationPaths.IdentityManagePath);
+    this.redirectToApiAuthorizationPath(`${CONFIGURATION.get<string>('client_configuration_url')}${ApplicationPaths.IdentityManagePath}`);
   }
 
   private async navigateToReturnUrl(returnUrl: string) {
@@ -115,11 +116,8 @@ export class LoginComponent implements OnInit {
   }
 
   private redirectToApiAuthorizationPath(apiAuthorizationPath: string) {
-    // It's important that we do a replace here so that when the user hits the back arrow on the
-    // browser they get sent back to where it was on the app instead of to an endpoint on this
-    // component.
-    const redirectUrl = `${window.location.origin}${apiAuthorizationPath}`;
-    window.location.replace(redirectUrl);
+    debugger
+    window.location.replace(apiAuthorizationPath);
   }
 }
 
