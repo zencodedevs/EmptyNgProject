@@ -2,7 +2,11 @@
 import { Component, OnInit } from '@angular/core';
 
 /** external imports */
+import { CONFIGURATION } from 'zencode-configuration-manager';
+
+/** internal imports */
 import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-nav-menu',
@@ -20,6 +24,11 @@ export class NavMenuComponent implements OnInit {
    * Determines whether production is
    */
   isProduction: any = false;
+
+  /**
+   * Api url of nav menu component
+   */
+  apiUrl = `${CONFIGURATION.get<string>('client_configuration_url')}/api`;
 
   /**
    * on init
