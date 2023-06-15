@@ -1,4 +1,4 @@
-import { CONFIGURATION } from "zencode-configuration-manager";
+import { CONFIGURATION } from "zencode-configuration-audit";
 
 export const ApplicationName = 'ZenAchitecture.WebUI';
 

@@ -132,7 +132,7 @@ export class CityClient implements ICityClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<CityDto[]>(<any>null);
+        return undefined; _observableOf<CityDto[]>(<any>null);
     }
 
     createCity(command: CreateCityCommand): Observable<number> {

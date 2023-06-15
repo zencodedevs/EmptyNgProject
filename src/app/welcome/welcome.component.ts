@@ -13,6 +13,7 @@ export class WelcomeComponent implements OnInit {
     constructor(private toastrService: ToastrService) { }
 
     ngOnInit(): void {
+         
         this.toastrService.info("WELCOME TO ZENCODE");
         this.toastrService.error("WELCOME TO ZENCODE");
         this.toastrService.warning("WELCOME TO ZENCODE");

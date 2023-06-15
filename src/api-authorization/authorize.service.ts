@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User, UserManager, WebStorageStateStore } from 'oidc-client';
 import { BehaviorSubject, concat, from, Observable } from 'rxjs';
 import { filter, map, mergeMap, take, tap } from 'rxjs/operators';
-import { CONFIGURATION } from 'zencode-configuration-manager';
+import { CONFIGURATION } from 'zencode-configuration-audit';
 import { ApplicationPaths, ApplicationName } from './api-authorization.constants';
 
 export type IAuthenticationResult =

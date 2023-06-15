@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /** external imports */
-import { CONFIGURATION } from 'zencode-configuration-manager';
+import { CONFIGURATION } from 'zencode-configuration-audit';
 
 /** internal imports */
 import { environment } from 'src/environments/environment';

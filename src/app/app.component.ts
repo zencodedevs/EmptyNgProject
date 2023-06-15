@@ -1,17 +1,22 @@
 /** core imports */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-
+export class AppComponent   implements OnInit{
+ 
   /**
    * Title  of app component
    */
   title = 'app';
 
+  ngOnInit(): void {
+     
+  }
+
+  
   /**
    * Determines whether started progress bar on
    */
